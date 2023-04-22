@@ -3,20 +3,31 @@
 {% block page_content %}
 <h1>Projects</h1>
 <div class="row">
-{% for project in projects %}
     <div class="col-md-4">
         <div class="card mb-2">
-            <img class="card-img-top" src="{% static project.image %}">
+            <a href="{% url 'project_detail' 1 %}"><img class="card-img-top" src="{% static 'img/Zwerfbond.png' %}"></a>
             <div class="card-body">
-                <h5 class="card-title">{{ project.title }}</h5>
-                <p class="card-text">{{ project.short_description }}</p>
-                <a href="{% url 'project_detail' project.pk %}"
+                <h5 class="card-title">Zwerfbond App</h5>
+                <p class="card-text">A mobile phone application</p>
+                <a href="{% url 'project_detail' 1 %}"
                    class="btn btn-primary">
                     Read More
                 </a>
             </div>
         </div>
     </div>
-    {% endfor %}
+    <div class="col-md-4">
+        <div class="card mb-2">
+            <a href="{% url 'project_detail' 2 %}"><img href="{% url 'project_detail' 2 %}" class="card-img-top" src="{% static 'img/OmasSoep.png' %}"></a>
+            <div class="card-body">
+                <h5 class="card-title">Oma's Soep Data Analysis</h5>
+                <p class="card-text">Data analysis project on sales figures</p>
+                <a href="{% url 'project_detail' 2 %}"
+                   class="btn btn-primary">
+                    Read More
+                </a>
+            </div>
+        </div>
+    </div>
 </div>
 {% endblock %}

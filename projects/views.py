@@ -1,14 +1,10 @@
 from django.shortcuts import render
-from projects.models import Project
 
 def project_index(request):
-    projects = Project.objects.all()
-    context = {
-        'projects': projects
-    }
-    return render(request, 'project_index.html', context)
+    return render(request, 'project_index.html')
 
 def project_detail(request, pk):
-    project = Project.objects.get(pk=pk)
-    context = {"project": project}
-    return render(request, "project_detail.html", context)
+    if pk==1:
+        return render(request, "project_detail_zwerfbond.html")
+    elif pk==2:
+        return render(request, "project_detail_omassoep.html")
